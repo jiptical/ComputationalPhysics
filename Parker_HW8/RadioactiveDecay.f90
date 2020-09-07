@@ -1,20 +1,28 @@
-!   P1.f90
 Program Radioactive_Decay
+!	Uses random number generator to solve radioactive decay problem
+
 Implicit None
+
+
 Integer i, N
 Double Precision lambda, ran2, dN
 Double Precision seed,time
+
 N = 1000
-time = 0.0d0
-seed = -100
+time = 0.0d0	!initial time 
+seed = -100	!seed for ran2
 lambda = 0.01
+
+! Open data files for writing data
+! overwrite if file exists
 Open(unit = 1,file='p11.dat',status='replace')
 Open(unit = 2,file='p12.dat',status='replace')
 Open(unit = 3,file='p13.dat',status='replace')
 
+
 Do While(N.GT.0)
 	dN = 0
-Do i = 1, N
+	Do i = 1, N
 		If(ran2(seed) .LT. lambda)Then
 		dN = dN + 1
 		End If
