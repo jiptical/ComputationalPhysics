@@ -1,3 +1,4 @@
+! P1.f90
 Program Radioactive_Decay
 !	Uses random number generator to solve radioactive decay problem
 
